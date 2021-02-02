@@ -5,7 +5,6 @@ import numpy as np
 def segmentation(img):
     thresh = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[1]
     stats = cv2.connectedComponentsWithStats(thresh, connectivity=8)[2][1:]
-    stats = stats[stats[:, 4] >= np.average(stats[:, 4]) / 10]
     stats = stats[np.argsort(stats[:, 0])]
     stats_mod = np.copy(stats)
     stats_mod[:, 2] = stats[:, 0] + stats[:, 2]
