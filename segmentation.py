@@ -27,7 +27,7 @@ def segmentation(img):
     return res[:, :4]
 
 
-image = cv2.imread('11.png')
+image = cv2.imread('sample.png')
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 segments = segmentation(gray)
 print(segments)
