@@ -38,7 +38,7 @@ def save_to_file(segments):
 def draw_rect(segments):
     for segment in segments:
         x1, y1, x2, y2 = segment[:4]
-        cv2.rectangle(image, (x1, y1), (x2, y2), (0, 0, 255), 1)
+        cv2.rectangle(image, (x1, y1), (x2, y2), (0, 0, 255), 2)
         
     
 
@@ -56,7 +56,7 @@ draw_rect(segments)
 
 if size_x > 280:
     font = cv2.FONT_HERSHEY_SIMPLEX
-    cv2.putText(image, "Press 'S' to Save", (int(size_x / 2) - 140, size_y - 8), font, 1, (200,200,0), 2, cv2.LINE_AA)
+    cv2.putText(image, "Press 'S' to Save", (int(size_x / 2) - 140, size_y - 8), font, 1, (255,0,76), 2, cv2.LINE_AA)
     
 print("Press 'S' to Save")
     
